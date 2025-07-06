@@ -319,7 +319,7 @@ document.querySelector('.overlap-3').addEventListener('click', async () => {
       return;
     }
 
-    const response = await fetch("https://test-final-un3a.onrender.com/predict", {
+    const response = await fetch("https://test-final1-sd9x.onrender.com/predict", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({mode, mach, aoa, ln, swept, lln})
