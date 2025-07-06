@@ -324,11 +324,25 @@ document.querySelector('.overlap-3').addEventListener('click', async () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({mode, mach, aoa, ln, swept, lln})
     });
-
-    const data = await response.json();
-
+    
+    const contentType = response.headers.get("content-type") || "";
+    const rawText = await response.text();
+    
     if (!response.ok) {
-      alert(data.error || "Lỗi không xác định từ server");
+      console.error("Lỗi server:", rawText);
+      alert("Server lỗi: " + rawText);
+      return;
+    }
+    
+    let data;
+    try {
+      if (!contentType.includes("application/json")) {
+        throw new Error("Server không trả về JSON.");
+      }
+      data = JSON.parse(rawText);
+    } catch (e) {
+      console.error("Lỗi parse JSON:", e.message, rawText);
+      alert("Không thể đọc phản hồi từ server: " + e.message);
       return;
     }
 
