@@ -1,0 +1,90 @@
+:root {
+  --variable-collection-length: 99.05999755859375px;
+  --variable-collection-diameter: 6.599999904632568px;
+  --variable-collection-LW: 20.31999969482422px;
+  --variable-collection-CTW: 5.71999979019165px;
+  --variable-collection-CRW: 9.140000343322754px;
+  --variable-collection-BW: 5.940000057220459px;
+  --variable-collection-LF: 89.91999816894531px;
+  --variable-collection-CTF: 5.710000038146973px;
+  --variable-collection-CRF: 9.140000343322754px;
+  --variable-collection-BF: 8.65999984741211px;
+  --collection-color: rgba(255, 255, 255, 1);
+}
+
+/*
+
+To enable a theme in your HTML, simply add one of the following data attributes to an HTML element, like so:
+
+<body data-variable-collection-mode="NASA">
+    <!-- the rest of your content -->
+</body>
+
+You can apply the theme on any DOM node, not just the `body`
+
+*/
+
+[data-variable-collection-mode="NASA"] {
+  --variable-collection-length: 99.05999755859375px;
+  --variable-collection-diameter: 6.599999904632568px;
+  --variable-collection-LW: 20.31999969482422px;
+  --variable-collection-CTW: 5.71999979019165px;
+  --variable-collection-CRW: 9.140000343322754px;
+  --variable-collection-BW: 5.940000057220459px;
+  --variable-collection-LF: 89.91999816894531px;
+  --variable-collection-CTF: 5.710000038146973px;
+  --variable-collection-CRF: 9.140000343322754px;
+  --variable-collection-BF: 8.65999984741211px;
+}
+
+[data-variable-collection-mode="Von-Karman Nose"] {
+  --variable-collection-length: 99.05999755859375px;
+  --variable-collection-diameter: 6.599999904632568px;
+  --variable-collection-LW: 20.31999969482422px;
+  --variable-collection-CTW: 5.71999979019165px;
+  --variable-collection-CRW: 9.140000343322754px;
+  --variable-collection-BW: 5.940000057220459px;
+  --variable-collection-LF: 89.91999816894531px;
+  --variable-collection-CTF: 5.710000038146973px;
+  --variable-collection-CRF: 9.140000343322754px;
+  --variable-collection-BF: 8.65999984741211px;
+}
+
+[data-variable-collection-mode="Missile Shape 1"] {
+  --variable-collection-length: 99.05999755859375px;
+  --variable-collection-diameter: 6.599999904632568px;
+  --variable-collection-LW: 30.77px;
+  --variable-collection-CTW: 4.46px;
+  --variable-collection-CRW: 9.140000343322754px;
+  --variable-collection-BW: 5.940000057220459px;
+  --variable-collection-LF: 73.66px;
+  --variable-collection-CTF: 8.31px;
+  --variable-collection-CRF: 9.140000343322754px;
+  --variable-collection-BF: 8.65999984741211px;
+}
+
+[data-variable-collection-mode="Missile Shape 2"] {
+  --variable-collection-length: 99.05999755859375px;
+  --variable-collection-diameter: 6.599999904632568px;
+  --variable-collection-LW: 46.97px;
+  --variable-collection-CTW: 3.87px;
+  --variable-collection-CRW: 9.140000343322754px;
+  --variable-collection-BW: 5.940000057220459px;
+  --variable-collection-LF: 76.82px;
+  --variable-collection-CTF: 5px;
+  --variable-collection-CRF: 9.140000343322754px;
+  --variable-collection-BF: 8.65999984741211px;
+}
+
+[data-variable-collection-mode="Missile Shape 3"] {
+  --variable-collection-length: 99.05999755859375px;
+  --variable-collection-diameter: 6.599999904632568px;
+  --variable-collection-LW: 28.03px;
+  --variable-collection-CTW: 4.39px;
+  --variable-collection-CRW: 9.140000343322754px;
+  --variable-collection-BW: 5.940000057220459px;
+  --variable-collection-LF: 80.18px;
+  --variable-collection-CTF: 7.01px;
+  --variable-collection-CRF: 9.140000343322754px;
+  --variable-collection-BF: 8.65999984741211px;
+}

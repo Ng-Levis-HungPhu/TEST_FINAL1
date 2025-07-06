@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/OrbitControls.js"></script>
+  </head>
+  <body>
+    <div class="model-image-container">
+      <img id="modelImage" src="model.png" alt="Model Illustration" />
+    </div>
+    <div class="first">
+      <div class="div">
+        <div class="group">
+          <div class="propertities">
+            <div class="overlap-group">
+              <div class="rectangle"></div>
+              <div class="text-wrapper">Properties of Missile</div>
+            </div>
+          </div>
+          <div class="group-2">
+            <div class="text-wrapper-2">Length (L) (cm)</div>
+            <div class="div-2"><div class="text-wrapper-3">99.06</div></div>
+          </div>
+          <div class="group-3">
+            <p class="p">Length from nose to Fin (LF) (cm)</p>
+            <div class="div-2"><div class="text-wrapper-3">89.92</div></div>
+          </div>
+          <div class="group-4">
+            <p class="text-wrapper-4">Length from nose to Wing (LW) (cm)</p>
+            <div class="div-2"><div class="text-wrapper-3">20.32</div></div>
+          </div>
+          <div class="overlap-wrapper">
+            <div class="overlap">
+              <div class="text-wrapper-5">Diameter (D) (cm)</div>
+              <div class="rectangle-2"></div>
+              <div class="text-wrapper-6">6.60</div>
+            </div>
+          </div>
+          <div class="overlap-group-wrapper">
+            <div class="overlap">
+              <p class="text-wrapper-7">Canard Tip Wing (CTW) (cm)</p>
+              <div class="div-2"></div>
+              <div class="text-wrapper-8">5.72</div>
+            </div>
+          </div>
+          <div class="div-wrapper">
+            <div class="overlap">
+              <p class="text-wrapper-9">Canard Root Wing (CRW) (cm)</p>
+              <div class="rectangle-3"></div>
+              <div class="text-wrapper-6">9.14</div>
+            </div>
+          </div>
+          <div class="group-5">
+            <div class="overlap">
+              <p class="text-wrapper-7">Canard Tip Fin (CTF) (cm)</p>
+              <div class="div-2"></div>
+              <div class="text-wrapper-8">5.71</div>
+            </div>
+          </div>
+          <div class="group-6">
+            <div class="overlap">
+              <p class="text-wrapper-7">Canard Root Fin (CRF) (cm)</p>
+              <div class="div-2"></div>
+              <div class="text-wrapper-8">9.14</div>
+            </div>
+          </div>
+          <div class="group-7">
+            <div class="overlap">
+              <div class="text-wrapper-7">Wingspan Wing (BW) (cm)</div>
+              <div class="div-2"></div>
+              <div class="text-wrapper-8">5.94</div>
+            </div>
+          </div>
+          <div class="group-8">
+            <div class="overlap">
+              <div class="text-wrapper-7">Wingspan Fin (BF) (cm)</div>
+              <div class="div-2"></div>
+              <div class="text-wrapper-8">8.66</div>
+            </div>
+          </div>
+        </div>
+        <div class="group-9">
+          <div class="group-10">
+            <div class="text-wrapper-10">Mach</div>
+            <div class="overlap-group-2">
+               <input type="number" id="machInput" class="input-field" value="0.00" />
+               <input type="range" id="machSlider" class="input-slider" min="0.01" max="4.5" step="0.01" value="0.00" />
+            </div>
+         </div>
+         
+         <div class="group-11">
+            <div class="text-wrapper-11">Angle of Attack (degree)</div>
+            <div class="overlap-group-2">
+               <input type="number" id="aoaInput" class="input-field" value="0.00" />
+               <input type="range" id="aoaSlider" class="input-slider" min="-4" max="25" step="0.01" value="0.00" />
+            </div>
+         </div>
+         
+         <div class="group-12">
+            <div class="text-wrapper-12">Nose Length (Ln) (cm)</div>
+            <div class="overlap-group-2">
+               <input type="number" id="lnInput" class="input-field" value="19.32" />
+               <input type="range" id="lnSlider" class="input-slider" min="3" max="20.32" step="0.01" value="19.32" />
+            </div>
+         </div>
+         
+         <div class="group-13">
+            <div class="text-wrapper-12">Swept Angle (degree)</div>
+            <div class="overlap-group-2">
+               <input type="number" id="sweptInput" class="input-field" value="16.54" />
+               <input type="range" id="sweptSlider" class="input-slider" min="5" max="70" step="0.01" value="16.54" />
+            </div>
+         </div>
+         
+         <div class="group-14">
+            <div class="text-wrapper-12">Body Length (cm)</div>
+            <div class="overlap-group-2">
+               <input type="number" id="lengthInput" class="input-field" readonly/>
+            </div>
+         </div>
+          <div class="group-15">
+            <div class="overlap-2">
+              <div class="rectangle-4"></div>
+              <div class="text-wrapper-13">Input Parameters</div>
+            </div>
+          </div>
+        </div>
+        <div class="group-16">
+          <div class="overlap-3"><div class="text-wrapper-14">PREDICT</div></div>
+        </div>
+        <div class="group-17">
+          <div class="overlap-4">
+            <div class="group-18">
+              <p class="text-wrapper-15">Coefficient of Drag (CD) is:</p>
+              <div class="div-3"><div class="text-wrapper-16" id = "cd">--</div></div>
+            </div>
+            <div class="group-19">
+              <div class="overlap-5">
+                <p class="text-wrapper-17">Coefficient of Lift (CL) is:</p>
+                <div class="div-3"></div>
+                <div class="text-wrapper-18" id="cl" >--</div>
+              </div>
+            </div>
+            <div class="overlap-6">
+              <img class="rectangle"/>
+              <div class="text-wrapper-19">OUTPUT</div>
+            </div>
+          </div>
+        </div>
+        <p class="QUICK-PREDICTING">QUICK PREDICTING AERODYNAMIC COEFFICIENTS <br />OF MISSILE’S MODELS</p>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button id="dropdownBtn" class="dropbtn">Model: NASA</button>
+      <div class="dropdown-content" id="dropdownList">
+        <a href="#" data-mode="NASA">NASA</a>
+        <a href="#" data-mode="Von-Karman Nose">Von-Karman Nose</a>
+        <a href="#" data-mode="Missile Shape 1">Missile Shape 1</a>
+        <a href="#" data-mode="Missile Shape 2">Missile Shape 2</a>
+        <a href="#" data-mode="Missile Shape 3">Missile Shape 3</a>
+      </div>
+    </div>
+    <div class="rocket-3d-container">
+      <canvas id="rocketCanvas" width="400" height="400"></canvas>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+<script src="script.js"></script>
