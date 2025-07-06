@@ -55,8 +55,6 @@ def predict():
 
             if not (5 <= swept <= 70):
                 return jsonify({"error": "Góc swept (Swept Angle) phải nằm trong khoảng từ 5 đến 70)"}),400
-            else:
-                warning_msg = ""
 
             model_cl_path = os.path.join(MODEL_DIR, "NASA_cl.h5")
             model_cd_path = os.path.join(MODEL_DIR, "NASA_cd.h5")
@@ -105,13 +103,9 @@ def predict():
         elif mode == "Missile Shape 1":
             if not (-2 <= aoa <= 20):
                 return jsonify({"error": "Góc tấn (Angle of Attack) phải nằm trong khoảng từ -2 đến 20)"}),400
-            else:
-                warning_msg = ""
 
             if not (1.7 <= mach <= 3.2):
                 return jsonify({"error": "Giá trị Mach phải nằm trong khoảng từ 1.7 đến 3.2"}), 400
-            else:
-                warning_msg = ""
 
             model_cl_path = os.path.join(MODEL_DIR, "Missile Shape 1_cl.h5")
             model_cd_path = os.path.join(MODEL_DIR, "Missile Shape 1_cd.h5")
@@ -129,13 +123,9 @@ def predict():
         elif mode == "Missile Shape 2":
             if not (-2 <= aoa <= 20):
                 return jsonify({"error": "Góc tấn (Angle of Attack) phải nằm trong khoảng từ -2 đến 20)"}),400
-            else:
-                warning_msg = ""
 
             if not (0.5 <= mach <= 0.8):
                 return jsonify({"error": "Giá trị Mach phải nằm trong khoảng từ 0.5 đến 0.8"}), 400
-            else:
-                warning_msg = ""
 
             model_cl_path = os.path.join(MODEL_DIR, "Missile Shape 2_cl.h5")
             model_cd_path = os.path.join(MODEL_DIR, "Missile Shape 2_cd.h5")
@@ -152,13 +142,9 @@ def predict():
         elif mode == "Missile Shape 3":
             if not (-2 <= aoa <= 20):
                 return jsonify({"error": "Góc tấn (Angle of Attack) phải nằm trong khoảng từ -2 đến 20)"}),400
-            else:
-                warning_msg = ""
 
             if not (0.5 <= mach <= 0.8):
                 return jsonify({"error": "Giá trị Mach phải nằm trong khoảng từ 0.5 đến 0.8"}), 400
-            else:
-                warning_msg = ""
     
             model_cl_path = os.path.join(MODEL_DIR, "Missile Shape 3_cl.h5")
             model_cd_path = os.path.join(MODEL_DIR, "Missile Shape 3_cd.h5")
